@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Loading...</title>
+<title>...</title>
+
 <style>
   body {
     background:black;
@@ -13,6 +14,7 @@
   }
 </style>
 </head>
+
 <body>
 
 <!-- 🎵 MÜZİK -->
@@ -23,23 +25,72 @@
 <div id="terminal"></div>
 
 <script>
+
 const lines = [
   "Sistem başlatılıyor...",
-  "Bağlantı kuruluyor...",
-  "Son 2 yıl analiz ediliyor...",
-  "Mutluluk oranı: %100",
-  "Sebep bulunuyor...",
-  "Bulundu: SEN ❤️",
+  "Tarih kontrol ediliyor...",
+  "13 Nisan 2026 bulundu.",
+  "Özel bir yıldönümü tespit edildi...",
   "",
-  "Bir şey daha var...",
-  "Hazır mısın?",
+  "Bugün, hayatımı daha anlamlı hale getirmenin ikinci yılı.",
   "",
-  "Aşağı kaydır..."
+  "Anılar yükleniyor...",
+  "Tunali...",
+  "Tunus Caddesi...",
+  "Aynı yollarda defalarca yürüyen iki insan...",
+  "Aslında galiba ben o zaman anlamıştım.",
+  "Senin 'o' kişi olabileceğini...",
+  "",
+  "Normal bir kahve bile güzeldi seninle.",
+  "Beraber yenilen en sıradan yemek bile özeldi.",
+  "Hatta Burger King bile...",
+  "Hayatımda yediğim en iyi burger olmuştu o gün :)",
+  "",
+  "2 yıl boyunca inişlerimiz de oldu, çıkışlarımız da.",
+  "Ama ikimiz de bu ilişki için savaştık.",
+  "Hem de gerçekten.",
+  "",
+  "Sen farkında olmasan da...",
+  "Hayatıma düzen getirdin.",
+  "Beni değiştirdin.",
+  "Beni geliştirdin.",
+  "Beni motive ettin.",
+  "",
+  "Hiç gym'e gideceğimi düşünmezdim mesela.",
+  "Ama senin etkin çok büyük oldu.",
+  "",
+  "Birlikte gezdiğimiz yerler...",
+  "Çeşme...",
+  "Krasnodar...",
+  "Dönerci bile :)",
+  "Hepsi seninle başka anlam kazandı.",
+  "",
+  "Bu daha başlangıç.",
+  "Daha çok şehir var.",
+  "Daha çok ülke var.",
+  "Daha çok anı var.",
+  "",
+  "Sende en çok sevdiğim şey karakterin oldu.",
+  "Şanslı bir adamım ben.",
+  "Çünkü hem kalbin güzel...",
+  "Hem yüzün güzel...",
+  "Hem de sana dair her şeyi seviyorum.",
+  "",
+  "Kendine bazen haksızlık ettiğini düşünüyorum.",
+  "Ama ben senin her zerreni seviyorum.",
+  "Ve her zerrene aşığım.",
+  "",
+  "Dünyadaki bütün güzellikleri seninle yaşamak istiyorum.",
+  "Seninle sadece 2 yıl değil...",
+  "Bir ömür geçirmek istiyorum.",
+  "",
+  "İyi ki hayatımdasın.",
+  "Her şey seninle güzel. ❤️"
 ];
 
 let i = 0;
 
-// 🎵 müziği başlatma (kullanıcı dokununca)
+// 🎵 kullanıcı dokununca müzik başlar
 document.body.addEventListener("click", function() {
   document.getElementById("bgMusic").play();
 }, { once: true });
@@ -52,12 +103,13 @@ function writeLine() {
     setTimeout(writeLine, 1500);
   } else {
     setTimeout(() => {
-      document.body.innerHTML += "<h2 style='color:pink;'>Mektubunu kontrol et 💌</h2>";
+      document.body.innerHTML += "<h2 style='color:pink;'>Şimdi sana gönderdiğim mesaja bak 💌</h2>";
     }, 2000);
   }
 }
 
 writeLine();
+
 </script>
 
 </body>
