@@ -2,8 +2,9 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>...</title>
+
   <style>
     body {
       margin: 0;
@@ -41,14 +42,9 @@
       border-radius: 14px;
       box-shadow: 0 0 20px rgba(255,255,255,0.08);
     }
-
-    .final-message {
-      color: pink;
-      margin-top: 28px;
-      font-size: 22px;
-    }
   </style>
 </head>
+
 <body>
 
   <!-- Başlangıç ekranı -->
@@ -142,18 +138,6 @@
           behavior: "smooth"
         });
         setTimeout(writeLine, 1500);
-      } else {
-        setTimeout(() => {
-          const finalMsg = document.createElement("div");
-          finalMsg.className = "final-message";
-          finalMsg.innerHTML = "Şimdi sana gönderdiğim mesaja bak 💌";
-          terminal.appendChild(finalMsg);
-
-          window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "smooth"
-          });
-        }, 2000);
       }
     }
 
@@ -168,5 +152,6 @@
       writeLine();
     });
   </script>
+
 </body>
 </html>
