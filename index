@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Loading...</title>
+<style>
+  body {
+    background:black;
+    color:#00ff00;
+    font-family: monospace;
+    padding:20px;
+    font-size:16px;
+  }
+</style>
+</head>
+<body>
+
+<!-- 🎵 MÜZİK -->
+<audio id="bgMusic" loop>
+  <source src="muzik.mp3" type="audio/mpeg">
+</audio>
+
+<div id="terminal"></div>
+
+<script>
+const lines = [
+  "Sistem başlatılıyor...",
+  "Bağlantı kuruluyor...",
+  "Son 2 yıl analiz ediliyor...",
+  "Mutluluk oranı: %100",
+  "Sebep bulunuyor...",
+  "Bulundu: SEN ❤️",
+  "",
+  "Bir şey daha var...",
+  "Hazır mısın?",
+  "",
+  "Aşağı kaydır..."
+];
+
+let i = 0;
+
+// 🎵 müziği başlatma (kullanıcı dokununca)
+document.body.addEventListener("click", function() {
+  document.getElementById("bgMusic").play();
+}, { once: true });
+
+function writeLine() {
+  if (i < lines.length) {
+    let div = document.getElementById("terminal");
+    div.innerHTML += lines[i] + "<br>";
+    i++;
+    setTimeout(writeLine, 1500);
+  } else {
+    setTimeout(() => {
+      document.body.innerHTML += "<h2 style='color:pink;'>Mektubunu kontrol et 💌</h2>";
+    }, 2000);
+  }
+}
+
+writeLine();
+</script>
+
+</body>
+</html>
