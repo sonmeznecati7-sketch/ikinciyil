@@ -1,116 +1,172 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-<meta charset="UTF-8">
-<title>...</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>...</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: #00ff00;
+      font-family: monospace;
+      padding: 20px;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
 
-<style>
-  body {
-    background:black;
-    color:#00ff00;
-    font-family: monospace;
-    padding:20px;
-    font-size:16px;
-  }
-</style>
+    #terminal {
+      white-space: pre-wrap;
+      line-height: 1.7;
+    }
+
+    #startScreen {
+      position: fixed;
+      inset: 0;
+      background: black;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 24px;
+      z-index: 9999;
+      cursor: pointer;
+      padding: 24px;
+    }
+
+    #startScreen .box {
+      border: 1px solid #333;
+      padding: 24px 28px;
+      border-radius: 14px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.08);
+    }
+
+    .final-message {
+      color: pink;
+      margin-top: 28px;
+      font-size: 22px;
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- 🎵 MÜZİK -->
-<audio id="bgMusic" loop>
-  <source src="muzik.mp3" type="audio/mpeg">
-</audio>
+  <!-- Başlangıç ekranı -->
+  <div id="startScreen">
+    <div class="box">Başlatmak için dokun ❤️</div>
+  </div>
 
-<div id="terminal"></div>
+  <!-- Müzik -->
+  <audio id="bgMusic" loop>
+    <source src="muzik.mp3" type="audio/mpeg" />
+  </audio>
 
-<script>
+  <!-- Terminal -->
+  <div id="terminal"></div>
 
-const lines = [
-  "Sistem başlatılıyor...",
-  "Tarih kontrol ediliyor...",
-  "13 Nisan 2026 bulundu.",
-  "Özel bir yıldönümü tespit edildi...",
-  "",
-  "Bugün, hayatımı daha anlamlı hale getirmenin ikinci yılı.",
-  "",
-  "Anılar yükleniyor...",
-  "Tunali...",
-  "Tunus Caddesi...",
-  "Aynı yollarda defalarca yürüyen iki insan...",
-  "Aslında galiba ben o zaman anlamıştım.",
-  "Senin 'o' kişi olabileceğini...",
-  "",
-  "Normal bir kahve bile güzeldi seninle.",
-  "Beraber yenilen en sıradan yemek bile özeldi.",
-  "Hatta Burger King bile...",
-  "Hayatımda yediğim en iyi burger olmuştu o gün :)",
-  "",
-  "2 yıl boyunca inişlerimiz de oldu, çıkışlarımız da.",
-  "Ama ikimiz de bu ilişki için savaştık.",
-  "Hem de gerçekten.",
-  "",
-  "Sen farkında olmasan da...",
-  "Hayatıma düzen getirdin.",
-  "Beni değiştirdin.",
-  "Beni geliştirdin.",
-  "Beni motive ettin.",
-  "",
-  "Hiç gym'e gideceğimi düşünmezdim mesela.",
-  "Ama senin etkin çok büyük oldu.",
-  "",
-  "Birlikte gezdiğimiz yerler...",
-  "Çeşme...",
-  "Krasnodar...",
-  "Dönerci bile :)",
-  "Hepsi seninle başka anlam kazandı.",
-  "",
-  "Bu daha başlangıç.",
-  "Daha çok şehir var.",
-  "Daha çok ülke var.",
-  "Daha çok anı var.",
-  "",
-  "Sende en çok sevdiğim şey karakterin oldu.",
-  "Şanslı bir adamım ben.",
-  "Çünkü hem kalbin güzel...",
-  "Hem yüzün güzel...",
-  "Hem de sana dair her şeyi seviyorum.",
-  "",
-  "Kendine bazen haksızlık ettiğini düşünüyorum.",
-  "Ama ben senin her zerreni seviyorum.",
-  "Ve her zerrene aşığım.",
-  "",
-  "Dünyadaki bütün güzellikleri seninle yaşamak istiyorum.",
-  "Seninle sadece 2 yıl değil...",
-  "Bir ömür geçirmek istiyorum.",
-  "",
-  "İyi ki hayatımdasın.",
-  "Her şey seninle güzel. ❤️"
-];
+  <script>
+    const lines = [
+      "Sistem başlatılıyor...",
+      "Tarih kontrol ediliyor...",
+      "13 Nisan 2026 bulundu.",
+      "Özel bir yıldönümü tespit edildi...",
+      "",
+      "Bugün, hayatımı daha anlamlı hale getirmenin ikinci yılı.",
+      "",
+      "Anılar yükleniyor...",
+      "Tunali...",
+      "Tunus Caddesi...",
+      "Aynı yollarda defalarca yürüyen iki insan...",
+      "Aslında galiba ben o zaman anlamıştım.",
+      "Senin 'o' kişi olabileceğini...",
+      "",
+      "Normal bir kahve bile güzeldi seninle.",
+      "Beraber yenilen en sıradan yemek bile özeldi.",
+      "Hatta Burger King bile...",
+      "Hayatımda yediğim en iyi burger olmuştu o gün :)",
+      "",
+      "2 yıl boyunca inişlerimiz de oldu, çıkışlarımız da.",
+      "Ama ikimiz de bu ilişki için savaştık.",
+      "Hem de gerçekten.",
+      "",
+      "Sen farkında olmasan da...",
+      "Hayatıma düzen getirdin.",
+      "Beni değiştirdin.",
+      "Beni geliştirdin.",
+      "Beni motive ettin.",
+      "",
+      "Hiç gym'e gideceğimi düşünmezdim mesela.",
+      "Ama senin etkin çok büyük oldu.",
+      "",
+      "Birlikte gezdiğimiz yerler...",
+      "Çeşme...",
+      "Krasnodar...",
+      "Dönerci bile :)",
+      "Hepsi seninle başka anlam kazandı.",
+      "",
+      "Bu daha başlangıç.",
+      "Daha çok şehir var.",
+      "Daha çok ülke var.",
+      "Daha çok anı var.",
+      "",
+      "Sende en çok sevdiğim şey karakterin oldu.",
+      "Şanslı bir adamım ben.",
+      "Çünkü hem kalbin güzel...",
+      "Hem yüzün güzel...",
+      "Hem de sana dair her şeyi seviyorum.",
+      "",
+      "Kendine bazen haksızlık ettiğini düşünüyorum.",
+      "Ama ben senin her zerreni seviyorum.",
+      "Ve her zerrene aşığım.",
+      "",
+      "Dünyadaki bütün güzellikleri seninle yaşamak istiyorum.",
+      "Seninle sadece 2 yıl değil...",
+      "Bir ömür geçirmek istiyorum.",
+      "",
+      "İyi ki hayatımdasın.",
+      "Her şey seninle güzel. ❤️"
+    ];
 
-let i = 0;
+    const terminal = document.getElementById("terminal");
+    const startScreen = document.getElementById("startScreen");
+    const bgMusic = document.getElementById("bgMusic");
 
-// 🎵 kullanıcı dokununca müzik başlar
-document.body.addEventListener("click", function() {
-  document.getElementById("bgMusic").play();
-}, { once: true });
+    let i = 0;
 
-function writeLine() {
-  if (i < lines.length) {
-    let div = document.getElementById("terminal");
-    div.innerHTML += lines[i] + "<br>";
-    i++;
-    setTimeout(writeLine, 1500);
-  } else {
-    setTimeout(() => {
-      document.body.innerHTML += "<h2 style='color:pink;'>Şimdi sana gönderdiğim mesaja bak 💌</h2>";
-    }, 2000);
-  }
-}
+    function writeLine() {
+      if (i < lines.length) {
+        terminal.innerHTML += lines[i] + "<br>";
+        i++;
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth"
+        });
+        setTimeout(writeLine, 1500);
+      } else {
+        setTimeout(() => {
+          const finalMsg = document.createElement("div");
+          finalMsg.className = "final-message";
+          finalMsg.innerHTML = "Şimdi sana gönderdiğim mesaja bak 💌";
+          terminal.appendChild(finalMsg);
 
-writeLine();
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+          });
+        }, 2000);
+      }
+    }
 
-</script>
+    startScreen.addEventListener("click", async function () {
+      try {
+        await bgMusic.play();
+      } catch (e) {
+        console.log("Müzik başlatılamadı:", e);
+      }
 
+      startScreen.style.display = "none";
+      writeLine();
+    });
+  </script>
 </body>
 </html>
